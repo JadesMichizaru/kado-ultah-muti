@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evidence File: Nov 11 🕯️</title>
+
+    <!-- Font: Playfair Display & Courier Prime -->
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #0f0f12;
+            --card-bg: #18181c;
+            --text-main: #f0f0f0;
+            --text-muted: #a0a0ab;
+            --accent-purple: #9d4edd;
+            --font-title: 'Playfair Display', serif;
+            --font-typewriter: 'Courier Prime', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-typewriter);
+            min-height: 100dvh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: radial-gradient(circle at center, #1f1b2e 0%, #0a0a0d 100%);
+            padding: 1.5rem 1rem;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 440px;
+            position: relative;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 2rem 1.75rem;
+            border-radius: 8px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            text-align: left;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(15px);
+            transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        .card.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            position: relative;
+        }
+
+        /* Stempel Elegan */
+        .stamp {
+            border: 1.5px solid var(--accent-purple);
+            color: var(--accent-purple);
+            padding: 4px 10px;
+            font-weight: 700;
+            display: inline-block;
+            transform: rotate(-3deg);
+            margin-bottom: 0.75rem;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .korean-sub {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+            display: block;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            font-family: var(--font-title);
+            font-size: 1.75rem;
+            margin: 0.5rem 0 1rem 0;
+            line-height: 1.25;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #d1d1d6;
+            margin-bottom: 1.25rem;
+        }
+
+        /* Tombol Aksi */
+        .btn-case {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: #e4e4e7;
+            padding: 12px 20px;
+            font-family: var(--font-typewriter);
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            margin-top: 0.5rem;
+        }
+
+        .btn-case:hover, .btn-case:focus {
+            background: var(--accent-purple);
+            border-color: var(--accent-purple);
+            color: #ffffff;
+            box-shadow: 0 0 15px rgba(157, 78, 221, 0.4);
+            outline: none;
+        }
+
+        /* Tampilan Foto Bukti */
+        .photo-container {
+            width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 1.25rem;
+            background: #000;
+        }
+
+        .photo-evidence {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+            filter: grayscale(40%) contrast(105%);
+            transition: filter 0.4s ease;
+        }
+
+        .photo-evidence:hover {
+            filter: grayscale(0%);
+        }
+
+        /* Custom Scrollbar untuk kartu pendek */
+        .card::-webkit-scrollbar {
+            width: 4px;
+        }
+        .card::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- SLIDE 1: Pembukaan Kasus -->
+        <div class="card active" id="slide1">
+            <span class="stamp">CLASSIFIED FILE</span>
+            <span class="korean-sub">기밀 문서 Open File</span>
+            <h1>Case File 11.11:<br>The Birthday Girl</h1>
+            <p><strong>Tanggal Kejadian:</strong> 11 November<br>
+               <strong>Subjek Utama:</strong> Seseorang yang memikat perhatian tanpa henti.<br>
+               <strong>Status Kasus:</strong> Rahasia / Membutuhkan Akses Khusus.</p>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">Klik tombol di bawah untuk membongkar berkas penyelidikan.</p>
+            <button class="btn-case" onclick="nextSlide('slide2')">Buka Berkas [Akses Diberikan]</button>
+        </div>
+
+        <!-- SLIDE 2: Identitas Tersangka -->
+        <div class="card" id="slide2">
+            <span class="stamp">SUBJECT IDENTIFIED</span>
+            <div class="photo-container">
+                <img src="IMG_20260529_194716_280.jpg" class="photo-evidence" alt="Profil Mutiara">
+            </div>
+
+            <h1>Identitas Subjek</h1>
+            <p><strong>Nama:</strong> Mutiara<br>
+               <strong>Tuduhan:</strong> Mencuri seluruh perhatian dan membuat hari-hari biasa terasa istimewa.</p>
+            <p>Sejak kehadirannya, Aku merasa seperti aku terlahir kembali; dialah penyemangat di setiap perjalanan yang aku lalui.</p>
+            <button class="btn-case" onclick="nextSlide('slide3')">Lihat Catatan Rahasia →</button>
+        </div>
+
+        <!-- SLIDE 3: Pesan Utama -->
+        <div class="card" id="slide3">
+            <span class="stamp">SECRET NOTE</span>
+            <span class="korean-sub">진심 어린 마음</span>
+            <h1>Pesan untuk Partner-in-Crime</h1>
+            <p>Di antara jutaan alur cerita di dunia ini, menemukanmu adalah bab favorit yang paling saya syukuri.</p>
+            <p>Selamat ulang tahun, Mutiara. Semoga kamu keterima di kampus impianmu, terus kejar mimpi kamu aku percaya kamu bisa menggapai itu, maaf kalau aku belum bisa membalas rasa suka kamu pada hari dimana kita bertemu.</p>
+            <button class="btn-case" onclick="nextSlide('slide4')">Selesaikan Penyelidikan</button>
+        </div>
+
+        <!-- SLIDE 4: Kesimpulan Kasus -->
+        <div class="card" id="slide4">
+            <span class="stamp">CASE RESOLVED</span>
+            <h1>Kesimpulan Kasus</h1>
+            <p>Penyelidikan selesai. Aku sebenarnya ingin membalas cintamu itu, namun aku masih sibuk dengan urusan impian dan karirku, hari ini tepatnya di hari spesial ini, aku ingin kita mengobrol bersama dan saling bertukar cerita.
+                Aku ingin kita berpacaran pada saat kita sudah lulus sekolah, karena aku tidak ingin terbebani oleh perasaan dan cinta dikala aku sedang mengejar karir.
+            </p>
+            <p style="text-align: center; font-size: 1.8rem; margin: 1.5rem 0;">🕯️✨🤍</p>
+            <button class="btn-case" onclick="location.reload()">Putar Ulang Berkas</button>
+        </div>
+
+    </div>
+
+    <script>
+        function nextSlide(targetId) {
+            const currentCard = document.querySelector('.card.active');
+            const targetCard = document.getElementById(targetId);
+
+            if (currentCard && targetCard) {
+                currentCard.classList.remove('active');
+
+                setTimeout(() => {
+                    targetCard.classList.add('active');
+                }, 200);
+            }
+        }
+    </script>
+</body>
+</html>
